@@ -44,7 +44,7 @@ for project in tqdm.tqdm(TCGA_projects):
         # All possible shifts from 5'- and 3'-ends
         shifts_5 = np.unique([isomiR.split("|")[1] for isomiR in isomiRs])
         shifts_3 = np.unique([isomiR.split("|")[2] for isomiR in isomiRs])
-        
+
         # For each 5'-shift, compute median expression over patients
         # by summing up over all possible 3'-shifts
         medians_5 = []
@@ -82,7 +82,7 @@ for project in tqdm.tqdm(TCGA_projects):
         fraction_3 = (expr_3 / total_expr).median()
 
         res.loc[len(res)] = [
-            project, miRNA, 
+            project, miRNA,
             max_shift_5, np.log2(np.max(medians_5) + 1), fraction_5,
             max_shift_3, np.log2(np.max(medians_3) + 1), fraction_3
         ]

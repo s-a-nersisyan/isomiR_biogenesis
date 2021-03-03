@@ -12,7 +12,7 @@ while i < len(lines):
     while not line.startswith(">"):
         i += 1
         line = lines[i]
-    
+
     # Remove trailing characters
     line = line[1:-1]
 
@@ -27,7 +27,7 @@ while i < len(lines):
     while line != "\n":
         if "|" not in line:
             secondary_structure.append(line[:-1])
-        
+
         i += 1
         line = lines[i]
 
