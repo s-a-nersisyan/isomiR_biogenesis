@@ -17,7 +17,7 @@ res = pd.DataFrame(columns=[
     "shift_3", "median_expr_3", "fraction_3"
 ])
 
-dropped_miRNA = {
+exceptional_miRNAs = {
     "hsa-miR-1269a": "hsa-miR-1269a-3p",
     "hsa-miR-137": "hsa-miR-137-3p",
     "hsa-miR-217": "hsa-miR-217-5p",
@@ -91,8 +91,8 @@ for project in tqdm.tqdm(TCGA_projects):
         fraction_5 = (expr_5 / total_expr).median()
         fraction_3 = (expr_3 / total_expr).median()
 
-        if (miRNA in dropped_miRNA):
-            miRNA = dropped_miRNA[miRNA]
+        if miRNA in exceptional_miRNAs:
+            miRNA = exceptional_miRNAs[miRNA]
 
         res.loc[len(res)] = [
             project, miRNA,
