@@ -42,6 +42,8 @@ ax = sns.heatmap(
     ax=ax
 )
 
+plt.setp(ax.get_xticklabels(), rotation=90, ha="center")
+plt.setp(ax.get_yticklabels(), rotation=0)
 ax.set_xlabel("")
 ax.set_ylabel("")
 plt.tight_layout()
