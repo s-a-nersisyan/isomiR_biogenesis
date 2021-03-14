@@ -1,0 +1,5 @@
+pattern	heter_with	heter_without	nonheter_with	nonheter_without	pvalue
+a	15	0	98	1	1.0
+c	15	0	99	0	1.0
+g	15	0	99	0	1.0
+u	15	0	99	0	1.0
